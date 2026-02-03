@@ -39,7 +39,15 @@ class TestIndexCoincidence(unittest.TestCase):
         # Check a small sample that was easy to do by hand.
         data = b"\x01\x02\x03\x04\x01\x02\x03\x04"
         scores = compute_width_scores(data)
-        expected = [(1, 0.0), (2, 0.0), (3, 0.0), (4, 1.0), (5, 0.0), (6, 0.0), (7, 0.0)]
+        expected = [
+            (1, 0.0),
+            (2, 0.0),
+            (3, 0.0),
+            (4, 1.0),
+            (5, 0.0),
+            (6, 0.0),
+            (7, 0.0),
+        ]
         self.assertEqual(scores, expected)
 
         # Do a bigger example, but just check that results stp at the correct width.

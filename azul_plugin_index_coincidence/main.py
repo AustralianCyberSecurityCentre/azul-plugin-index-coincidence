@@ -18,8 +18,16 @@ class AzulPluginIndexCoincidence(BinaryPlugin):
     # If this index improves by assuming the file is obfuscated by a key with a certain width,
     # feature those widths and their improved index.
     FEATURES = [
-        Feature("index_of_coincidence", "Probability that two randomly selected bytes have the same value", float),
-        Feature("index_of_coincidence_width", "Possible key widths which improve the index of coincidence", int),
+        Feature(
+            "index_of_coincidence",
+            "Probability that two randomly selected bytes have the same value",
+            float,
+        ),
+        Feature(
+            "index_of_coincidence_width",
+            "Possible key widths which improve the index of coincidence",
+            int,
+        ),
     ]
     SETTINGS = add_settings(
         filter_max_content_size=(int, 5 * 1024 * 1024),
@@ -46,7 +54,9 @@ class AzulPluginIndexCoincidence(BinaryPlugin):
 
         for width, improved_index in widths:
             # The width is the feature, and has a label with the improved index of coincidence score.
-            self.add_feature_values("index_of_coincidence_width", FV(width, label=str(improved_index)))
+            self.add_feature_values(
+                "index_of_coincidence_width", FV(width, label=str(improved_index))
+            )
 
 
 def main():

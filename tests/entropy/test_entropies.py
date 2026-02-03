@@ -9,7 +9,11 @@ TEST_BLOCK_COUNT = 100
 class EntropiesTest(unittest.TestCase):
     def assertAllAlmostEqual(self, first, second, places=7, msg=None):
         self.assertEqual(len(first), len(second), msg)
-        self.assertEqual([round(x - y, places) for x, y in zip(first, second)], [0.0] * len(first), msg)
+        self.assertEqual(
+            [round(x - y, places) for x, y in zip(first, second)],
+            [0.0] * len(first),
+            msg,
+        )
 
     def test_eights(self):
         buf = bytes(bytearray([x for x in range(TEST_BLOCK_SIZE)] * TEST_BLOCK_COUNT))

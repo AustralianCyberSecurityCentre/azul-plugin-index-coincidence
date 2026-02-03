@@ -21,7 +21,7 @@ if __name__ == "__main__":
     try:
         with open(OUTPUT_FILE, "r") as f:
             structure = json.load(f)
-    except:
+    except Exception:
         structure = []
 
     structure.append((expected_width, scores))

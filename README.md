@@ -55,6 +55,10 @@ tox -e style
 tox -e test
 ```
 
+## Developer note
+
+This package uses setuptools rather than hatchling due to it's need for a C extension module.
+
 ## Dependency management
 
 Dependencies are managed in the requirements.txt, requirements_test.txt and debian.txt file.
