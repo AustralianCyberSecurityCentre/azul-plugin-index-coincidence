@@ -1,5 +1,4 @@
 import os
-import sys
 import tempfile
 import unittest
 
@@ -12,7 +11,11 @@ TEST_BLOCK_COUNT = 100
 class EntropyFilesTest(unittest.TestCase):
     def assertAllAlmostEqual(self, first, second, places=7, msg=None):
         self.assertEqual(len(first), len(second), msg)
-        self.assertEqual([round(x - y, places) for x, y in zip(first, second)], [0.0] * len(first), msg)
+        self.assertEqual(
+            [round(x - y, places) for x, y in zip(first, second)],
+            [0.0] * len(first),
+            msg,
+        )
 
     def test_entropy(self):
         buf = bytes(bytearray([int(x) for x in range(TEST_BLOCK_SIZE)]))
