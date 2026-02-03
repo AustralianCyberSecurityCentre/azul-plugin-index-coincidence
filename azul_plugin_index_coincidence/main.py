@@ -54,9 +54,7 @@ class AzulPluginIndexCoincidence(BinaryPlugin):
 
         for width, improved_index in widths:
             # The width is the feature, and has a label with the improved index of coincidence score.
-            self.add_feature_values(
-                "index_of_coincidence_width", FV(width, label=str(improved_index))
-            )
+            self.add_feature_values("index_of_coincidence_width", FV(width, label=str(improved_index)))
 
 
 def main():
