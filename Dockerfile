@@ -37,10 +37,10 @@ WORKDIR /tmp/src
 # Install all dependencies
 RUN uv sync --frozen --no-editable
 # Install package with version attached. (hatchling and hatch-vcs installed after sync to avoid being uninstalled)
-RUN uv pip install --system hatchling hatch-vcs
+RUN uv pip install --system build setuptools_scm
 RUN uv build . --out-dir /tmp/
 RUN uv pip uninstall --system azul-plugin-index-coincidence
-RUN uv pip install --system --no-deps --find-links /tmp/ azul-plugin-index-coincidence==$(hatchling version)
+RUN uv pip install --system --no-deps --find-links /tmp/ azul-plugin-index-coincidence==$(cd /tmp/src && python -m setuptools_scm)
 
 # Upgrade to dev azul dependencies or upgrade non-dev azul dependencies depending on branch.
 RUN if [ "$GIT_BRANCH_NAME" = "refs/heads/dev" ] ; then \

@@ -3,6 +3,7 @@ requires = [
     "setuptools >= 64",
     "setuptools_scm >= 8",
 ]
+# uses setup tools due to need for for ext-modules
 build-backend = "setuptools.build_meta"
 
 [project]
