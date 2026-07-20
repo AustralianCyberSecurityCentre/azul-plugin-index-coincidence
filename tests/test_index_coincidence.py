@@ -28,8 +28,7 @@ class TestIndexCoincidence(test_template.TestPlugin):
                 state=State(State.Label.COMPLETED),
                 events=[
                     Event(
-                        entity_type="binary",
-                        entity_id="40aff2e9d2d8922e47afd4648e6967497158785fbd1da870e7110266bf944880",
+                        sha256="40aff2e9d2d8922e47afd4648e6967497158785fbd1da870e7110266bf944880",
                         features={"index_of_coincidence": [FV(0.0)]},
                     )
                 ],
@@ -48,8 +47,7 @@ class TestIndexCoincidence(test_template.TestPlugin):
                 state=State(State.Label.COMPLETED),
                 events=[
                     Event(
-                        entity_type="binary",
-                        entity_id="110009dcee21620b166f3abfecb5eff7a873be729d1c2d53822e7acc5f34eb9b",
+                        sha256="110009dcee21620b166f3abfecb5eff7a873be729d1c2d53822e7acc5f34eb9b",
                         features={
                             "index_of_coincidence": [FV(0.0)],
                             "index_of_coincidence_width": [FV(256, label="1.0")],

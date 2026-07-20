@@ -1,6 +1,6 @@
 """Find index-of-coincidence widths to find obfuscation key widths and data repetition."""
 
-from azul_runner import FV, BinaryPlugin, Feature, Job, State, add_settings, cmdline_run
+from azul_runner import FV, BinaryPlugin, Feature, FeatureType, Job, State, add_settings, cmdline_run
 
 from .entropy import entropy
 from .index_coincidence.main import get_features
@@ -21,12 +21,12 @@ class AzulPluginIndexCoincidence(BinaryPlugin):
         Feature(
             "index_of_coincidence",
             "Probability that two randomly selected bytes have the same value",
-            float,
+            FeatureType.Float,
         ),
         Feature(
             "index_of_coincidence_width",
             "Possible key widths which improve the index of coincidence",
-            int,
+            FeatureType.Integer,
         ),
     ]
     SETTINGS = add_settings(

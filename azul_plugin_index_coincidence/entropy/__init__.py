@@ -1,6 +1,6 @@
 """Calculate shannon entropy over data."""
 
-from _entropy import block_entropies, count_entropies, entropy
+from _entropy import block_entropies, count_entropies, entropy # ty: ignore[unresolved-import]
 
 
 def block_entropies_file(filepath, block_size):
